@@ -64,8 +64,9 @@ const categoriesControllers = {
         res,
         200,
         true,
-        { result: result.rows, pagination: pagination },
-        'get categories success'
+        result.rows,
+        'get categories success',
+        pagination
       );
     } catch (error) {
       console.log(error);
@@ -109,8 +110,9 @@ const categoriesControllers = {
         res,
         200,
         true,
-        { result: result.rows, pagination: pagination },
-        'get categories success'
+        result.rows,
+        'get categories success',
+        pagination
       );
     } catch (error) {
       console.log(error);

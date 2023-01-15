@@ -97,13 +97,7 @@ const productsControllers = {
         totalPage,
       };
 
-      response(
-        res,
-        200,
-        true,
-        { result: result.rows, pagination: pagination },
-        'get products success'
-      );
+      response(res, 200, true, result.rows, 'get products success', pagination);
     } catch (error) {
       console.log(error);
       response(res, 404, false, error, 'get products failed');
@@ -142,12 +136,13 @@ const productsControllers = {
         res,
         200,
         true,
-        { result: result.rows, pagination: pagination },
-        'get products success'
+        result.rows,
+        'get products sold success',
+        pagination
       );
     } catch (error) {
       console.log(error);
-      response(res, 404, false, error, 'get products failed');
+      response(res, 404, false, error, 'get products sold failed');
     }
   },
   getArchived: async (req, res) => {
@@ -183,12 +178,13 @@ const productsControllers = {
         res,
         200,
         true,
-        { result: result.rows, pagination: pagination },
-        'get products success'
+        result.rows,
+        'get products archived success',
+        pagination
       );
     } catch (error) {
       console.log(error);
-      response(res, 404, false, error, 'get products failed');
+      response(res, 404, false, error, 'get products archived failed');
     }
   },
   edit: async (req, res, next) => {
@@ -320,13 +316,7 @@ const productsControllers = {
         totalPage,
       };
 
-      response(
-        res,
-        200,
-        true,
-        { result: result.rows, pagination: pagination },
-        'get products success'
-      );
+      response(res, 200, true, result.rows, 'get products success', pagination);
     } catch (error) {
       console.log(error);
       response(res, 404, false, error, 'get products failed');
